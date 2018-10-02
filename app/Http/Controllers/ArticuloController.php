@@ -58,7 +58,7 @@ class ArticuloController extends Controller
             ->orderBy('articulos.id', 'desc')->paginate(10);
         }
 
-        return ['articulos'    => $articulos];
+        return ['articulos' => $articulos];
     }
 
     public function buscarArticulo(Request $request)
@@ -67,7 +67,7 @@ class ArticuloController extends Controller
 
         $filtro = $request->filtro;
         $articulos = Articulo::where('codigo','=', $filtro)
-        ->select('id','nombre')->orderBy('nombre', 'asc')->take(1)->get();
+        ->select('id','nombre','precio_venta','stock')->orderBy('nombre', 'asc')->take(1)->get();
 
         return ['articulos' => $articulos];
     }

@@ -18,6 +18,12 @@
             <template v-if="menu==4">
                 <proveedor></proveedor>
             </template>
+            <template v-if="menu==5">
+                <Venta></Venta>
+            </template>
+            <template v-if="menu==6">
+                <cliente></cliente>
+            </template>
             <template v-if="menu==7">
                 <user></user>       
             </template>
